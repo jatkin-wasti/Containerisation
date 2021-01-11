@@ -28,4 +28,43 @@ Sky, and many more
 - DockerHub repo required to see the container or image
 - Wrapped up container can be pulled and ran on any OS
 
-### How it works
+### Docker commands
+**docker pull image_name**
+- This pulls the image from a library and stores it on your local machine, allowing
+it to be run
+- To test that Docker has been installed correctly we can try and pull hello-world
+with 'docket pull hello-world'
+
+**docker images**
+- This will show all of the images available, any images you have pulled should
+show up here
+
+**docker run image_name**
+- This will run the chosen image
+- We can run our hello-world image with `docker run hello-world`. If everything
+was successful, we should see a hello message telling us that the installation
+is working correctly
+
+**docker build -t image_name**
+-
+
+**docker commit image_name/container_id**
+-
+
+**docker start container_id**
+-
+
+**docker stop container_id**
+-
+
+**docker rm container_id**
+- Deletes a specified container
+
+**docker ps and ps-a**
+- Checks the existing containers
+
+**docker exec -it container_id**
+- 
+
+### Logging into a running container
+`docker exec -it container_id`
