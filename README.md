@@ -99,7 +99,7 @@ mapping persists on any terminal
 #### Copying in files from localhost to container
 - The general syntax is `docker cp <source> <destination>` where the destination
 will be the file path preceded by the container id/name and a colon
-- An specific example could be `docker cp index.html ea35b31c13f4:/usr/share/nginx/html/`
+- An specific example could be `docker cp index.html ea35b31c13f4:usr/share/nginx/html/`
 ### Making docker docs available on our local host
 `docker run -d -p 4000:4000 docs/docker.github.io`
 - This will mean we can pull locally in the future instead of having to rely on
