@@ -50,10 +50,10 @@ is working correctly
 **docker rmi image_name**
 - This will delete the specified image
 
-**docker build -t image_name**
+**docker build -t image_name .**
 - This will create an image using a Dockerfile
 
-**docker commit image_name/container_id username/repo_name**
+**docker commit container_id username/repo_name**
 - Commits a container to be pushed to a given repository
 
 **docker push username/repo_name**
@@ -163,3 +163,21 @@ menu
 the GitHub provider
 ### Why do this?
 - This helps us set up webhooks which we can use to automate docker development
+## Microservices
+- Application is made up of many small services that communicate using an API
+- Each service has one specific job that it is concerned with
+### Why use them?
+- Allows for separation of concern
+- Can ensure that there isn't a single point of failure
+- Allows you to upscale specific parts of an application
+- These services are highly maintainable and testable
+- If one part of the application breaks we can fix or replace one of these microservices
+instead of having to search for and edit that part in a single piece of infrastructure which
+will need to be updated as a whole
+### Why shouldn't everyone adopt them?
+- If you don't have manpower that can quickly and reliably make changes to services
+and provision environments then you won't be able to get value out of it
+- Requires robust management to maintain operation of all the different services, as
+ each one may require different
+ - Understanding how each service interacts and all the dependencies required
+ for each service can become quite difficult
