@@ -79,9 +79,9 @@ the container is run again
 - With ps -a, this displays all available containers whether they are currently
 running or not
 
-**docker exec -it container_id**
+**docker exec -it container_id bash**
 - This logs into a running container to edit its configuration or check the
-environment
+environment with the specified
 
 #### Flags
 **-d**
@@ -111,3 +111,12 @@ will be the file path preceded by the container id/name and a colon
 `docker run -d -p 4000:4000 docs/docker.github.io`
 - This will mean we can pull locally in the future instead of having to rely on
 the internet
+
+## Connecting DockerHub to a GitHub account
+- Once logged into DockerHub, click on Account Settings in the top right dropdown
+menu
+- On the left hand menu click on Linked Accounts
+- Click connect for the GitHub provider
+- Authorise this action in the pop up and put in your password to finish this process
+- Now they are connected and you should see a plug symbol and your github name for
+the GitHub provider
