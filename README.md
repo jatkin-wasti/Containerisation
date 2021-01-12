@@ -47,11 +47,18 @@ for this image and if not found it will try to find it and pull it from the regi
 was successful, we should see a hello message telling us that the installation
 is working correctly
 
+**docker rmi image_name**
+- This will delete the specified image
+
 **docker build -t image_name**
 -
 
-**docker commit image_name/container_id**
--
+**docker commit image_name/container_id username/repo_name**
+- Commits a container to be pushed to a given repository
+
+**docker push username/repo_name**
+- This will push your image to the dockerhub repo
+- This command requires your dockerhub username and your case sensitive repo name
 
 **docker start container_id**
 - This starts a container that isn't currently running
