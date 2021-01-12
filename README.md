@@ -51,7 +51,7 @@ is working correctly
 - This will delete the specified image
 
 **docker build -t image_name**
--
+- This will create an image using a Dockerfile
 
 **docker commit image_name/container_id username/repo_name**
 - Commits a container to be pushed to a given repository
@@ -133,6 +133,25 @@ will be the file path preceded by the container id/name and a colon
 `docker run -d -p 4000:4000 docs/docker.github.io`
 - This will mean we can pull locally in the future instead of having to rely on
 the internet
+
+### Building a docker image
+- To build a docker image we need to create a Dockerfile
+- The naming convention is important, needs a capital D and no file extension
+#### Why build an image?
+- To automate the tasks
+#### What information is required in the Dockerfile?
+- It depends on the container and the client's requirements/needs
+- We need to know the dependencies to run the app/db
+- We need to wrap up all of the dependencies in our Dockerfile and instruct the
+execution command
+#### What is the syntax of a Dockerfile?
+- Starts with ```FROM``` which tells docker which base image to use when building
+- ```LABEL MAINTAINER=email@address.com``` can be used to signify who created
+and maintains the image
+- ```COPY``` can copy a file or folder from localhost to a container
+- ```EXPOSE``` is used to open up ports for the container to use
+- ```CMD``` is the execution command
+  - We could run ```CMD ["nginx", "-g", "daemon off;"]``` for an nginx based image
 
 ## Connecting DockerHub to a GitHub account
 - Once logged into DockerHub, click on Account Settings in the top right dropdown
