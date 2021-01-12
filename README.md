@@ -83,6 +83,24 @@ running or not
 - This logs into a running container to edit its configuration or check the
 environment with the specified
 
+**docker history container_id/name**
+- Shows the history of an image
+
+**docker inspect image_id/name**
+- Shows information of an image
+- Can be used to find out about an image without entering the container e.g.
+ports used, commands run etc.
+
+**docker logs container_id/name**
+- Shows the contents of the logs for the specified container
+- If desired, we can put the output of this command into a file with `docker logs
+container_id/name >> name_of_file.txt`
+  - This command will not run if you have aliased docker to winpty docker so open
+  a new terminal and the command should go through
+  - Alternatively we can edit the environment variable set to only change docker
+  exec to winpty docker exec so that winpty is not placed in front of all
+  docker commands
+
 #### Flags
 **-d**
 - Used to run images in a detached mode
@@ -94,8 +112,12 @@ control of it while running
 
 **-f**
 - Used to force a command e.g. removing a container
+
+**-it**
+- This specifies an interactive shell will be used
+
 ### Logging into a running container
-`docker exec -it container_id`
+`docker exec -it container_id shell_type`
 - On Windows this may give the following error "the input device is not a TTY.  If you are using mintty, try prefixing the command with 'winpty'"
 - A way to fix this is to either add `winpty` before the command each time you
 run it, or enter the following command `alias docker="winpty docker"` which will
@@ -120,3 +142,5 @@ menu
 - Authorise this action in the pop up and put in your password to finish this process
 - Now they are connected and you should see a plug symbol and your github name for
 the GitHub provider
+### Why do this?
+- This helps us set up webhooks which we can use to automate docker development
