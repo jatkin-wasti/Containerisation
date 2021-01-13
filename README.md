@@ -17,7 +17,7 @@
 Sky, and many more
 - Docker adoption was anticipated to be 50% by the end of 2020
 - Lightweight and user friendly
-- Shares resources with OS as opposed to using the OS completely (as is the case
+- Shares resources with OS as opposed to using their own OS completely (as is the case
   with VM's)
 - Docker engine connects the container with OS and only uses the resources required
 - VM works with Hypervisor to connect guest OS/VM with Host OS/server
@@ -152,7 +152,7 @@ and maintains the image
 - ```EXPOSE``` is used to open up ports for the container to use
 - ```WORKDIR``` can be used to change the current working directory within the
 container
-  - This can be useful for installing packages or editing files in specific locations 
+  - This can be useful for installing packages or editing files in specific locations
 - ```RUN``` can be used to run terminal commands
   - We can have as many run commands as we want to set up our image
 - ```CMD``` is the execution command that runs after the image has been set up
