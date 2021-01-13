@@ -171,13 +171,25 @@ the GitHub provider
 - Can ensure that there isn't a single point of failure
 - Allows you to upscale specific parts of an application
 - These services are highly maintainable and testable
-- If one part of the application breaks we can fix or replace one of these microservices
-instead of having to search for and edit that part in a single piece of infrastructure which
-will need to be updated as a whole
+- Each service is independently deployable
+- If one part of the application breaks we can fix or replace one of these
+microservices and update that single service instead of having to search for
+and edit that part in a single piece of infrastructure which will need to be
+updated as a whole
 ### Why shouldn't everyone adopt them?
 - If you don't have manpower that can quickly and reliably make changes to services
 and provision environments then you won't be able to get value out of it
 - Requires robust management to maintain operation of all the different services, as
- each one may require different
+ each one may require different teams to manage each one
  - Understanding how each service interacts and all the dependencies required
  for each service can become quite difficult
+ - It is very expensive to refactor a monolithic architecture to microservices
+
+## What is Kubernetes?
+- Orchestration tool for managing containers and their behaviour
+- Has self healing benefits, if something breaks it can spin up a new healthy
+version (similar to autoscaling)
+- Can scale on demand and autoscale
+- Can use individual ip's for each container and set up ports for them
+- Can create an ingress controller for web facing interface
+- Can deploy the application using kubernetes
