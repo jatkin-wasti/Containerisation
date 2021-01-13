@@ -150,7 +150,13 @@ execution command
 and maintains the image
 - ```COPY``` can copy a file or folder from localhost to a container
 - ```EXPOSE``` is used to open up ports for the container to use
-- ```CMD``` is the execution command
+- ```WORKDIR``` can be used to change the current working directory within the
+container
+  - This can be useful for installing packages or editing files in specific locations 
+- ```RUN``` can be used to run terminal commands
+  - We can have as many run commands as we want to set up our image
+- ```CMD``` is the execution command that runs after the image has been set up
+  - Only the final CMD command will be run in a given Dockerfile
   - We could run ```CMD ["nginx", "-g", "daemon off;"]``` for an nginx based image
 
 ## Connecting DockerHub to a GitHub account
